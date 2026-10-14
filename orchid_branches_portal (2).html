@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#111827" />
+  <title>أوركيد ORCHID | الفروع والتواصل والمتجر الإلكتروني</title>
+  <style>
+    :root {
+      --bg-body: #f3f4f6;
+      --bg-app: #f9fafb;
+      --bg-card: #ffffff;
+      --primary: #111827;
+      --accent: #6b2d5c;
+      --accent-soft: #f5edf3;
+      --wa-color: #25D366;
+      --wa-dark: #128C7E;
+      --maps-color: #1a73e8;
+      --ig-color: #E1306C;
+      --fb-color: #1877F2;
+      --tt-color: #000000;
+      --text-main: #111827;
+      --text-sub: #6b7280;
+      --border: #e5e7eb;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 10px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, 'Noto Sans Arabic', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* Mobile Shell */
+    .app-container {
+      width: 100%;
+      max-width: 460px;
+      min-height: 100vh;
+      background: var(--bg-app);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+      padding-bottom: 84px;
+    }
+
+    /* Clean Salla-Style Header */
+    .header-card {
+      background: var(--bg-card);
+      padding: 24px 18px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 14px;
+    }
+
+    .logo-circle {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 10px;
+      border-radius: 18px;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(17, 24, 39, 0.16);
+    }
+
+    .logo-circle .en {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+    }
+
+    .logo-circle .ar {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .header-card h1 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .header-card p {
+      font-size: 0.84rem;
+      color: var(--text-sub);
+      max-width: 340px;
+      margin: 0 auto 16px;
+    }
+
+    /* Main Social & Contact Icon Bar */
+    .platform-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-app);
+      border: 1px solid var(--border);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .icon-circle:active {
+      transform: scale(0.93);
+    }
+
+    .icon-circle.wa { background: #ecfdf5; border-color: #a7f3d0; color: var(--wa-color); }
+    .icon-circle.ig { background: #fdf2f8; border-color: #fbcfe8; color: var(--ig-color); }
+    .icon-circle.tt { background: #f3f4f6; border-color: #d1d5db; color: var(--tt-color); }
+    .icon-circle.fb { background: #eff6ff; border-color: #bfdbfe; color: var(--fb-color); }
+    .icon-circle.call { background: var(--accent-soft); border-color: #e5d0e1; color: var(--accent); }
+
+    /* Top Dual CTA (Store + Unified WhatsApp) */
+    .main-cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .main-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      font-weight: 800;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .main-btn:active {
+      transform: scale(0.97);
+    }
+
+    .main-btn.store-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .main-btn.wa-btn {
+      background: var(--wa-color);
+      color: #fff;
+    }
+
+    /* Section Wrapper */
+    .section {
+      padding: 0 14px;
+      margin-bottom: 16px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 0 2px;
+    }
+
+    .section-head h2 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unified-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #ecfdf5;
+      color: var(--wa-dark);
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid #a7f3d0;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-sub);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Simplified Branch Card */
+    .branches-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .branch-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 15px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .branch-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .branch-info h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .branch-info p.addr {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .branch-info p.hours {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .city-badge {
+      background: var(--bg-app);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Action Buttons Row inside Branch Card */
+    .branch-actions-row {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 7px;
+      margin-bottom: 10px;
+    }
+
+    .act-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 9px 8px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: transform 0.15s ease;
+    }
+
+    .act-btn:active {
+      transform: scale(0.96);
+    }
+
+    .act-btn.maps {
+      background: #eff6ff;
+      color: var(--maps-color);
+      border: 1px solid #bfdbfe;
+    }
+
+    .act-btn.wa {
+      background: #ecfdf5;
+      color: var(--wa-dark);
+      border: 1px solid #a7f3d0;
+    }
+
+    .act-btn.site {
+      background: #f3f4f6;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    /* Social Media Icons Footer per Branch */
+    .branch-socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 9px;
+      border-top: 1px solid #f3f4f6;
+    }
+
+    .branch-socials span {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .branch-social-icons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sm-icon-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: var(--bg-app);
+      transition: transform 0.15s ease;
+    }
+
+    .sm-icon-btn:active {
+      transform: scale(0.92);
+    }
+
+    .sm-icon-btn.ig { color: var(--ig-color); background: #fdf2f8; border-color: #fbcfe8; }
+    .sm-icon-btn.tt { color: var(--tt-color); background: #f3f4f6; border-color: #e5e7eb; }
+    .sm-icon-btn.fb { color: var(--fb-color); background: #eff6ff; border-color: #bfdbfe; }
+    .sm-icon-btn.wa { color: var(--wa-color); background: #ecfdf5; border-color: #a7f3d0; }
+
+    /* Quick Store Links List (Salla Style) */
+    .quick-links-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .q-link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 15px;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .q-link-row:last-child {
+      border-bottom: none;
+    }
+
+    .q-link-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .q-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--bg-app);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    /* Footer Meta */
+    .mini-footer {
+      text-align: center;
+      padding: 8px 16px 16px;
+      font-size: 0.74rem;
+      color: var(--text-sub);
+    }
+
+    .mini-footer .reg-numbers {
+      display: inline-flex;
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 6px;
+      font-size: 0.72rem;
+    }
+
+    /* Sticky Bottom Bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      max-width: 460px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      padding: 10px 14px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .sticky-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px;
+      border-radius: var(--radius-md);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .sticky-btn.wa {
+      background: var(--wa-color);
+      color: #fff;
+    }
+
+    .sticky-btn.store {
+      background: var(--primary);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable Official Brand SVG Symbols -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <!-- WhatsApp Official Vector Icon -->
+      <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12.031 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 0 0 1.333 4.993L2 22l5.233-1.237a9.994 9.994 0 0 0 4.779 1.217h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.037-5.176-2.922-7.062A9.935 9.935 0 0 0 12.031 2zm5.824 14.12c-.245.693-1.43 1.332-1.976 1.411-.503.073-1.14.104-1.841-.119-.426-.135-.974-.316-1.678-.62-2.957-1.277-4.888-4.254-5.036-4.451-.147-.197-1.202-1.6-1.202-3.053 0-1.453.761-2.167 1.031-2.463.27-.296.589-.37.785-.37.197 0 .393.002.565.01.181.009.424-.069.663.507.245.591.835 2.044.908 2.192.074.148.123.32.025.517-.098.197-.148.32-.295.492-.147.173-.31.386-.442.518-.148.148-.302.309-.13.604.172.296.763 1.259 1.638 2.039 1.126 1.004 2.075 1.315 2.37 1.463.295.148.467.123.639-.074.172-.197.737-.862.933-1.157.197-.296.393-.246.663-.148.27.098 1.719.811 2.014.959.295.148.491.222.565.345.074.123.074.714-.171 1.407z"/>
+      </symbol>
+
+      <!-- Google Maps Official Pin Vector Icon -->
+      <symbol id="icon-maps" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+      </symbol>
+
+      <!-- Instagram Official Vector Icon -->
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+      </symbol>
+
+      <!-- TikTok Official Vector Icon -->
+      <symbol id="icon-tiktok" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+      </symbol>
+
+      <!-- Facebook Official Vector Icon -->
+      <symbol id="icon-facebook" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+      </symbol>
+
+      <!-- Store / Shopping Bag Vector Icon (Salla style) -->
+      <symbol id="icon-store" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12zm-7-8c-1.66 0-3-1.34-3-3H7c0 2.76 2.24 5 5 5s5-2.24 5-5h-2c0 1.66-1.34 3-3 3z"/>
+      </symbol>
+
+      <!-- Globe / Website Vector Icon -->
+      <symbol id="icon-globe" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+      </symbol>
+
+      <!-- Phone Call Vector Icon -->
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </symbol>
+
+      <!-- Arrow Left Vector Icon -->
+      <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <main class="app-container">
+
+    <!-- Simplified Salla-Style Top Header -->
+    <header class="header-card">
+      <div class="logo-circle">
+        <span class="en">ORCHID</span>
+        <span class="ar">أوركيد</span>
+      </div>
+
+      <h1>أوركيد ORCHID</h1>
+      <p>علامة أزياء بهوية معاصرة للنساء والرجال والأطفال • تأسست عام 2003م</p>
+
+      <!-- Platform Icons Bar -->
+      <div class="platform-icons-row" aria-label="منصات التواصل الرسمية">
+        <a href="https://wa.me/966590470838" target="_blank" rel="noopener" class="icon-circle wa" title="واتساب الموحد">
+          <svg width="22" height="22"><use href="#icon-whatsapp"/></svg>
+        </a>
+        <a href="https://www.instagram.com/orchid_store001/" target="_blank" rel="noopener" class="icon-circle ig" title="إنستغرام">
+          <svg width="21" height="21"><use href="#icon-instagram"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@orchid_ksa" target="_blank" rel="noopener" class="icon-circle tt" title="تيك توك">
+          <svg width="20" height="20"><use href="#icon-tiktok"/></svg>
+        </a>
+        <a href="https://www.facebook.com/Orchidddddd/" target="_blank" rel="noopener" class="icon-circle fb" title="فيسبوك">
+          <svg width="21" height="21"><use href="#icon-facebook"/></svg>
+        </a>
+        <a href="tel:+966590470838" class="icon-circle call" title="اتصال بالرقم الموحد">
+          <svg width="20" height="20"><use href="#icon-phone"/></svg>
+        </a>
+      </div>
+
+      <!-- Main Store & Unified WhatsApp Buttons -->
+      <div class="main-cta-grid">
+        <a href="https://orchid.sa/ar" target="_blank" rel="noopener" class="main-btn store-btn">
+          <svg width="19" height="19"><use href="#icon-store"/></svg>
+          <span>المتجر الإلكتروني</span>
+        </a>
+        <a href="https://wa.me/966590470838?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D9%88%D8%B1%D9%83%D9%8A%D8%AF%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1" target="_blank" rel="noopener" class="main-btn wa-btn">
+          <svg width="20" height="20"><use href="#icon-whatsapp"/></svg>
+          <span dir="ltr">0590470838</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Branches Section -->
+    <section class="section">
+      <div class="section-head">
+        <h2>
+          <svg width="18" height="18" style="color:var(--maps-color)"><use href="#icon-maps"/></svg>
+          <span>فروعنا ومواقعها في Google Maps</span>
+        </h2>
+        <span class="unified-badge">رقم موحد: 0590470838</span>
+      </div>
+
+      <!-- City Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="filterBranches('all', this)">الكل (4)</button>
+        <button class="tab-btn" onclick="filterBranches('جدة', this)">جدة (2)</button>
+        <button class="tab-btn" onclick="filterBranches('الرياض', this)">الرياض (1)</button>
+        <button class="tab-btn" onclick="filterBranches('القريات', this)">القريات (1)</button>
+      </div>
+
+      <div class="branches-stack">
+
+        <!-- Branch 1: Jeddah Al Faisaliyah -->
+        <article class="branch-item" data-city="جدة">
+          <div class="branch-top">
+            <div class="branch-info">
+              <h3>فرع جدة – حي الفيصلية</h3>
+              <p class="addr">شارع صاري فرعي – بجوار دوار الهندسة</p>
+              <p class="hours">السبت–الخميس: 9ص–1:30م و 4:30م–12ص | الجمعة: 4:30م–12ص</p>
+            </div>
+            <span class="city-badge">جدة</span>
+          </div>
+
+          <div class="branch-actions-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%88%D8%B1%D9%83%D9%8A%D8%AF+%D8%B5%D8%A7%D8%B1%D9%8A+%D8%A7%D9%84%D9%81%D9%8A%D8%B5%D9%84%D9%8A%D8%A9+%D8%AC%D8%AF%D8%A9&query_place_id=ChIJm3YPm_vQwxURHMC9wzhz2_s" target="_blank" rel="noopener" class="act-btn maps">
+              <svg width="16" height="16"><use href="#icon-maps"/></svg>
+              <span>جوجل ماب</span>
+            </a>
+            <a href="https://wa.me/966590470838?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D9%88%D8%B1%D9%83%D9%8A%D8%AF%D8%8C%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%81%D8%B1%D8%B9%20%D8%AC%D8%AF%D8%A9%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%81%D9%8A%D8%B5%D9%84%D9%8A%D8%A9%20(%D8%B4%D8%A7%D8%B1%D8%B9%20%D8%B5%D8%A7%D8%B1%D9%8A)" target="_blank" rel="noopener" class="act-btn wa">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg>
+              <span>واتساب</span>
+            </a>
+            <a href="https://orchid.sa/ar" target="_blank" rel="noopener" class="act-btn site">
+              <svg width="16" height="16"><use href="#icon-globe"/></svg>
+              <span>الموقع</span>
+            </a>
+          </div>
+
+          <div class="branch-socials">
+            <span>حسابات الفرع:</span>
+            <div class="branch-social-icons">
+              <a href="https://www.instagram.com/orchid_store001/" target="_blank" rel="noopener" class="sm-icon-btn ig" title="إنستغرام فرع جدة">
+                <svg width="17" height="17"><use href="#icon-instagram"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@orchid_ksa" target="_blank" rel="noopener" class="sm-icon-btn tt" title="تيك توك">
+                <svg width="16" height="16"><use href="#icon-tiktok"/></svg>
+              </a>
+              <a href="https://www.facebook.com/Orchidddddd/" target="_blank" rel="noopener" class="sm-icon-btn fb" title="فيسبوك">
+                <svg width="17" height="17"><use href="#icon-facebook"/></svg>
+              </a>
+              <a href="tel:+966590470838" class="sm-icon-btn" title="اتصال بالرقم الموحد">
+                <svg width="16" height="16"><use href="#icon-phone"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Branch 2: Riyadh Al Suwaidi -->
+        <article class="branch-item" data-city="الرياض">
+          <div class="branch-top">
+            <div class="branch-info">
+              <h3>فرع الرياض – حي السويدي الغربي</h3>
+              <p class="addr">مجمع ريماس – شارع حمزة بن عبدالمطلب</p>
+              <p class="hours">يومياً: 9:30ص–12:30م و 4:30م–12:30ص | الجمعة: 4:30م–12:30ص</p>
+            </div>
+            <span class="city-badge">الرياض</span>
+          </div>
+
+          <div class="branch-actions-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%88%D8%B1%D9%83%D9%8A%D8%AF+%D9%85%D8%AC%D9%85%D8%B9+%D8%B1%D9%8A%D9%85%D8%A7%D8%B3+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%AD%D9%85%D8%B2%D8%A9+%D8%A8%D9%86+%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%85%D8%B7%D9%84%D8%A8+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6&query_place_id=ChIJdZnjC98bLz4R5dkDUITVk-Y" target="_blank" rel="noopener" class="act-btn maps">
+              <svg width="16" height="16"><use href="#icon-maps"/></svg>
+              <span>جوجل ماب</span>
+            </a>
+            <a href="https://wa.me/966590470838?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D9%88%D8%B1%D9%83%D9%8A%D8%AF%D8%8C%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%20-%20%D9%85%D8%AC%D9%85%D8%B9%20%D8%B1%D9%8A%D9%85%D8%A7%D8%B3%20(%D8%AD%D9%8A%20%D8%A7%D9%84%D8%B3%D9%88%D9%8A%D8%AF%D9%8A)" target="_blank" rel="noopener" class="act-btn wa">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg>
+              <span>واتساب</span>
+            </a>
+            <a href="https://orchid.sa/ar" target="_blank" rel="noopener" class="act-btn site">
+              <svg width="16" height="16"><use href="#icon-globe"/></svg>
+              <span>الموقع</span>
+            </a>
+          </div>
+
+          <div class="branch-socials">
+            <span>حسابات الفرع:</span>
+            <div class="branch-social-icons">
+              <a href="https://www.instagram.com/reel/DeUnFrlOiIu/" target="_blank" rel="noopener" class="sm-icon-btn ig" title="إنستغرام فرع الرياض (@orchid_riyadhksa)">
+                <svg width="17" height="17"><use href="#icon-instagram"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@orchid_ksa" target="_blank" rel="noopener" class="sm-icon-btn tt" title="تيك توك">
+                <svg width="16" height="16"><use href="#icon-tiktok"/></svg>
+              </a>
+              <a href="https://www.facebook.com/Orchidddddd/" target="_blank" rel="noopener" class="sm-icon-btn fb" title="فيسبوك">
+                <svg width="17" height="17"><use href="#icon-facebook"/></svg>
+              </a>
+              <a href="tel:+966590470838" class="sm-icon-btn" title="اتصال بالرقم الموحد">
+                <svg width="16" height="16"><use href="#icon-phone"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Branch 3: Al-Qurayyat Al Humaidiyah -->
+        <article class="branch-item" data-city="القريات">
+          <div class="branch-top">
+            <div class="branch-info">
+              <h3>فرع القريات – حي الحميدية</h3>
+              <p class="addr">سوق العزيزية – القريات 77453</p>
+              <p class="hours">السبت–الخميس: 9:00ص–11:30م | الجمعة: 4:00م–11:30م</p>
+            </div>
+            <span class="city-badge">القريات</span>
+          </div>
+
+          <div class="branch-actions-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%88%D8%B1%D9%83%D9%8A%D8%AF+%D8%B3%D9%88%D9%82+%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2%D9%8A%D9%87+%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%D9%8A%D8%A9+%D8%A7%D9%84%D9%82%D8%B1%D9%8A%D8%A7%D8%AA&query_place_id=ChIJC3ICIAAHEBURvXBL26XdWFU" target="_blank" rel="noopener" class="act-btn maps">
+              <svg width="16" height="16"><use href="#icon-maps"/></svg>
+              <span>جوجل ماب</span>
+            </a>
+            <a href="https://wa.me/966590470838?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D9%88%D8%B1%D9%83%D9%8A%D8%AF%D8%8C%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%81%D8%B1%D8%B9%20%D8%A7%D9%84%D9%82%D8%B1%D9%8A%D8%A7%D8%AA%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF%D9%8A%D8%A9%20(%D8%B3%D9%88%D9%82%20%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2%D9%8A%D8%A9)" target="_blank" rel="noopener" class="act-btn wa">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg>
+              <span>واتساب</span>
+            </a>
+            <a href="https://orchid.sa/ar" target="_blank" rel="noopener" class="act-btn site">
+              <svg width="16" height="16"><use href="#icon-globe"/></svg>
+              <span>الموقع</span>
+            </a>
+          </div>
+
+          <div class="branch-socials">
+            <span>حسابات الفرع:</span>
+            <div class="branch-social-icons">
+              <a href="https://www.instagram.com/orchid_store001/" target="_blank" rel="noopener" class="sm-icon-btn ig" title="إنستغرام">
+                <svg width="17" height="17"><use href="#icon-instagram"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@orchid_ksa" target="_blank" rel="noopener" class="sm-icon-btn tt" title="تيك توك">
+                <svg width="16" height="16"><use href="#icon-tiktok"/></svg>
+              </a>
+              <a href="https://www.facebook.com/Orchidddddd/" target="_blank" rel="noopener" class="sm-icon-btn fb" title="فيسبوك">
+                <svg width="17" height="17"><use href="#icon-facebook"/></svg>
+              </a>
+              <a href="tel:+966590470838" class="sm-icon-btn" title="اتصال بالرقم الموحد">
+                <svg width="16" height="16"><use href="#icon-phone"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Branch 4: Jeddah Al Mahameed -->
+        <article class="branch-item" data-city="جدة">
+          <div class="branch-top">
+            <div class="branch-info">
+              <h3>فرع جدة – حي المحاميد</h3>
+              <p class="addr">طريق مكة القديم – جدة 23447</p>
+              <p class="hours">يومياً: 4:00 م – 11:30 م</p>
+            </div>
+            <span class="city-badge">جدة</span>
+          </div>
+
+          <div class="branch-actions-row">
+            <a href="https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%88%D8%B1%D9%83%D9%8A%D8%AF+%D8%B7%D8%B1%D9%8A%D9%82+%D9%85%D9%83%D9%87+%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85+%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D9%85%D9%8A%D8%AF+%D8%AC%D8%AF%D8%A9&query_place_id=ChIJS0SSk68zwhURbfBvJF806sA" target="_blank" rel="noopener" class="act-btn maps">
+              <svg width="16" height="16"><use href="#icon-maps"/></svg>
+              <span>جوجل ماب</span>
+            </a>
+            <a href="https://wa.me/966590470838?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D9%88%D8%B1%D9%83%D9%8A%D8%AF%D8%8C%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%81%D8%B1%D8%B9%20%D8%AC%D8%AF%D8%A9%20-%20%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D9%85%D9%8A%D8%AF%20(%D8%B7%D8%B1%D9%8A%D9%82%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85)" target="_blank" rel="noopener" class="act-btn wa">
+              <svg width="16" height="16"><use href="#icon-whatsapp"/></svg>
+              <span>واتساب</span>
+            </a>
+            <a href="https://orchid.sa/ar" target="_blank" rel="noopener" class="act-btn site">
+              <svg width="16" height="16"><use href="#icon-globe"/></svg>
+              <span>الموقع</span>
+            </a>
+          </div>
+
+          <div class="branch-socials">
+            <span>حسابات الفرع:</span>
+            <div class="branch-social-icons">
+              <a href="https://www.instagram.com/orchid_store001/" target="_blank" rel="noopener" class="sm-icon-btn ig" title="إنستغرام">
+                <svg width="17" height="17"><use href="#icon-instagram"/></svg>
+              </a>
+              <a href="https://www.tiktok.com/@orchid_ksa" target="_blank" rel="noopener" class="sm-icon-btn tt" title="تيك توك">
+                <svg width="16" height="16"><use href="#icon-tiktok"/></svg>
+              </a>
+              <a href="https://www.facebook.com/Orchidddddd/" target="_blank" rel="noopener" class="sm-icon-btn fb" title="فيسبوك">
+                <svg width="17" height="17"><use href="#icon-facebook"/></svg>
+              </a>
+              <a href="tel:+966590470838" class="sm-icon-btn" title="اتصال بالرقم الموحد">
+                <svg width="16" height="16"><use href="#icon-phone"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Simplified Store Links (Salla Style) -->
+    <section class="section">
+      <div class="section-head">
+        <h2>
+          <svg width="18" height="18" style="color:var(--accent)"><use href="#icon-store"/></svg>
+          <span>روابط المتجر السريعة (orchid.sa)</span>
+        </h2>
+      </div>
+
+      <div class="quick-links-card">
+        <a href="https://orchid.sa/ar/sportswear/c1472976028" target="_blank" rel="noopener" class="q-link-row">
+          <div class="q-link-left">
+            <div class="q-icon-box"><svg width="16" height="16"><use href="#icon-store"/></svg></div>
+            <span>قسم الملابس الرياضية</span>
+          </div>
+          <svg width="18" height="18" style="color:var(--text-sub)"><use href="#icon-arrow-left"/></svg>
+        </a>
+
+        <a href="https://orchid.sa/ar/dresses/c1563415207" target="_blank" rel="noopener" class="q-link-row">
+          <div class="q-link-left">
+            <div class="q-icon-box"><svg width="16" height="16"><use href="#icon-store"/></svg></div>
+            <span>قسم الفساتين والتنانير</span>
+          </div>
+          <svg width="18" height="18" style="color:var(--text-sub)"><use href="#icon-arrow-left"/></svg>
+        </a>
+
+        <a href="https://orchid.sa/ar/the-exclusive-collection/c1341908166" target="_blank" rel="noopener" class="q-link-row">
+          <div class="q-link-left">
+            <div class="q-icon-box"><svg width="16" height="16"><use href="#icon-store"/></svg></div>
+            <span>المجموعة الحصرية</span>
+          </div>
+          <svg width="18" height="18" style="color:var(--text-sub)"><use href="#icon-arrow-left"/></svg>
+        </a>
+
+        <a href="https://orchid.sa/ar/سياسة-الاستبدال-و-الاسترجاع/page-264477608" target="_blank" rel="noopener" class="q-link-row">
+          <div class="q-link-left">
+            <div class="q-icon-box"><svg width="16" height="16"><use href="#icon-globe"/></svg></div>
+            <span>سياسة الاستبدال والاسترجاع</span>
+          </div>
+          <svg width="18" height="18" style="color:var(--text-sub)"><use href="#icon-arrow-left"/></svg>
+        </a>
+
+        <a href="https://orchid.sa/ar/من-نحن/page-871182013" target="_blank" rel="noopener" class="q-link-row">
+          <div class="q-link-left">
+            <div class="q-icon-box"><svg width="16" height="16"><use href="#icon-globe"/></svg></div>
+            <span>من نحن – نبذة عن أوركيد</span>
+          </div>
+          <svg width="18" height="18" style="color:var(--text-sub)"><use href="#icon-arrow-left"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="mini-footer">
+      <div class="reg-numbers">
+        <span>سجل تجاري: <strong>7054001610</strong></span>
+        <span>•</span>
+        <span>الرقم الضريبي: <strong>314718367800003</strong></span>
+      </div>
+      <div>© 2026 أوركيد ORCHID • جميع الحقوق محفوظة</div>
+    </footer>
+
+    <!-- Sticky Bottom Bar -->
+    <nav class="sticky-bar" aria-label="التواصل السريع">
+      <a href="https://wa.me/966590470838?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D9%88%D8%B1%D9%83%D9%8A%D8%AF%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D8%A1" target="_blank" rel="noopener" class="sticky-btn wa">
+        <svg width="19" height="19"><use href="#icon-whatsapp"/></svg>
+        <span>واتساب: 0590470838</span>
+      </a>
+      <a href="https://orchid.sa/ar" target="_blank" rel="noopener" class="sticky-btn store">
+        <svg width="18" height="18"><use href="#icon-store"/></svg>
+        <span>المتجر الإلكتروني</span>
+      </a>
+    </nav>
+
+  </main>
+
+  <script>
+    function filterBranches(city, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.branch-item').forEach(card => {
+        if (city === 'all' || card.getAttribute('data-city') === city) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
